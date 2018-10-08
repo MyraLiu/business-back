@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <title>登录页面</title>
 </head>
 <style>
-    *{
+    * {
         margin: 0px;
         padding: 0px;
     }
 
-    body{
+    body {
         background-image: url("imgs/bacg.jpg");
     }
-    .container{
+
+    .container {
         width: 30%;
-        position:fixed;
+        position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-70%);
+        transform: translate(-50%, -70%);
 
     }
 </style>
 <body>
-
 
 
 <h3 style="text-align: center;margin-top: 150px">欢迎登录电商后台管理系统</h3>
@@ -37,12 +38,13 @@
     <form class="form-horizontal" >
 
         <div class="form-group">
-            <label  for="username" class="col-sm-3 control-label">用户名</label>
+            <label for="username" class="col-sm-3 control-label">用户名</label>
             <div class="col-sm-7">
                 <input type="text" class="form-control" id="username"
                        placeholder="请输入用户名">
             </div>
         </div>
+
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">密码</label>
             <div class="col-sm-7">
@@ -51,16 +53,22 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-sm-7">
+                <span id="showerror" style="color:red"></span>
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-lg-offset-3 col-sm-7">
-                <button type="button" class="btn btn-primary  btn-block">登录</button>
+                <button id="login" type="button" class="btn btn-primary  btn-block">登录</button>
             </div>
         </div>
     </form>
 
-</div>
 
+</div>
 
 </body>
 </html>
