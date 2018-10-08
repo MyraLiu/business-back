@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simditor.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/module.js"></script>
+    <script src="js/hotkeys.js"></script>
+    <script src="js/uploader.js"></script>
+    <script src="js/simditor.js"></script>
+    <title>商品管理</title>
+    <style>
+        .product_container{
+
+            display: -webkit-flex;
+            flex-direction: column;
+            width: 90%;
+            margin:0px auto;
+        }
+        .product_title_container{
+
+            position:relative;
+            border-bottom: 1px #f1f1f1 solid;
+            height: 5em;
+        }
+        .product_title_container>h3{
+            display: inline-block;
+
+        }
+        .product_title_container>a{
+            width: 8em;
+            height: 2.4em;
+            font-size: 1em;
+            position: absolute;
+            right: 0;
+            top:50%;
+            -webkit-transform: translateY(-50%);
+        }
+        .product_search_container{
+
+            margin-top: 20px;
+        }
+        .product_search_container .form-group{
+            display: inline-block;
+
+        }
+
+        .product_search_container button{
+        }
+.product_page_container{
+    display: -webkit-flex;
+    /*justify-content: center;*/
+}
+        .product_content_container{
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="product_container">
+
+    <div class="product_title_container">
+        <h3>商品管理 -- 添加商品</h3>
+    </div>
+
+    <form class="form-horizontal" style="margin-top: 20px">
+        <div class="form-group">
+            <label for="productName" class="col-sm-2 control-label">商品名称</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="productName"
+                       placeholder="请输入商品名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productDesc" class="col-sm-2 control-label">商品描述</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="productDesc"
+                       placeholder="请输入商品描述">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category" class="col-sm-2 control-label">所属分类</label>
+            <div class="col-sm-6">
+                <select id="disabledSelect" id="category" class="form-control col-sm-10">
+                    <option>请选择一级品类</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productPrice" class="col-sm-2 control-label">商品价格</label>
+            <div class="col-sm-3 input-group">
+                <input type="text" class="form-control" id="productPrice"
+                       placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productStock" class="col-sm-2 control-label">商品库存</label>
+            <div class="col-sm-3 input-group">
+                <input type="text" class="form-control" id="productStock"
+                       placeholder="库存">
+                <div class="input-group-addon">件</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productfileupload" class="col-sm-2 control-label">商品图片</label>
+            <div class="col-sm-3">
+                <input type="file" class="form-control" id="productfileupload">
+                <p class="help-block">上传图片</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="editor" class="col-sm-2 control-label">商品描述</label>
+            <div class="col-sm-10">
+                <textarea id="editor" class="form-control" placeholder="商品详细"
+                          autofocus></textarea>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    $(function () {
+        var editor = new Simditor({
+            textarea: $('#editor')
+            //optional options
+        });
+    })
+</script>
+</body>
+</html>

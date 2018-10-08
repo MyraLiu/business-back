@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>后台管理页面</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background-color: white;
+    }
+    .container{
+        position: relative;
+
+
+    }
+    .head_contianer{
+        height: 4em;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    .head_container_content{
+        height: 2em;
+        margin-top: 1em;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .head_container_content>span{
+       font-size: 1.2em;
+    }
+    .head_container_content>.head_container_content_info{
+      background-color: aquamarine;
+        display: inline-block;
+       float: right;
+    }
+    .content_container{
+
+        display: -webkit-flex;
+    }
+    .nav_container{
+        width: 20%;
+
+
+    }
+.sub_content_container{
+    width: 80%;
+
+}
+</style>
+<body>
+
+<div class="container">
+
+    <div class="head_contianer">
+        <div style="height: 1px"></div>
+        <div class="head_container_content">
+            <span>NEUEDU ADMIN</span>
+            <div class="head_container_content_info">
+              <span>欢迎，Admin</span>
+                <a href="#">退出</a>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+    <div class="content_container">
+        <div class="nav_container">
+
+            <div>
+
+                 <a id="home" href="#" class="list-group-item ">
+                     <img src="imgs/home.png" width="20px" height="20px"></img>
+                     <span>&nbsp;HOME</span>
+                </a>
+                <a href="#"  class="list-group-item">
+                    <img src="imgs/product.png" width="20px" height="20px"></img>
+                    <span>&nbsp;商品</span>
+                </a>
+                <a href="#" id="product-manager" class="list-group-item">&nbsp;&nbsp;&nbsp;商品管理</a>
+                <a href="#" id="category-manager" class="list-group-item">&nbsp;&nbsp;&nbsp;品类管理</a>
+                <a href="#" class="list-group-item">
+                    <img src="imgs/order.png" width="20px" height="20px"></img>
+                    <span>&nbsp; 订单</span>
+
+                </a>
+                <a href="#" id="order-manager" class="list-group-item">&nbsp;&nbsp;&nbsp;订单管理</a>
+            </div>
+        </div>
+        <div class="sub_content_container">
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+    $(function () {
+        $(".sub_content_container").load("./echarts.html");
+
+        $("#product-manager").click(function () {
+            $(".sub_content_container").load("./product.html");
+
+        });
+        $("#category-manager").click(function () {
+            $(".sub_content_container").load("./category.html");
+
+        });
+        $("#home").click(function () {
+            $(".sub_content_container").load("./echarts.html");
+
+        });
+        $("#order-manager").click(function () {
+            $(".sub_content_container").load("./order.html");
+
+        });
+    });
+
+</script>
+
+</body>
+</html>
